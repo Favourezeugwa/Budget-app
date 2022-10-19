@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   resources :expense_categories
   resources :expenses
   resources :categories
-  resources :users
+  resources :splash
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "categories#index"
+  root "splash#index"
+  devise_scope :user do 
+    get '/users/sign_out' => 'devise/sessions#destroy' 
+  end
 end
