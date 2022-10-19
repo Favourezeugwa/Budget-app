@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :expense_categories
-  resources :categories
-  resources :expenses
   resources :splash
 
   resources :categories, only: [:index, :show, :new, :create, :destroy] do
