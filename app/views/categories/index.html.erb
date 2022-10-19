@@ -8,6 +8,9 @@
     <p>
       <%= link_to "Show this category", category %>
     </p>
+    <p>
+      <%= link_to 'DELETE', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </p>
   <% end %>
 </div>
 
