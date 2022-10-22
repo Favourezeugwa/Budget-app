@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green"></p>
 
 <h1>Expense categories</h1>
 
 <div id="expense_categories">
-  <% @expense_categories.each do |expense_category| %>
-    <%= render expense_category %>
+  <% @expenses.each do |expense| %>
     <p>
-      <%= link_to "Show this expense category", expense_category %>
+      <strong>Name:</strong>
+      <%= expense.name %>
+    </p>
+
+    <p>
+      <strong>Amount:</strong>
+      <%= expense.amount %>
+    </p>
+
+    <p>
+      <%= link_to "Show this expense category", expense_path(expense) %>
+      <div class="mx-2">|</div> <%= button_to "Delete this expense", expense_path(expense), method: :delete, class: 'border-0 text-primary' %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New expense category", new_expense_category_path %>
+<%= link_to "New expense", new_expense_path %>
+
+<%= link_to "Back to category", categories_path %>

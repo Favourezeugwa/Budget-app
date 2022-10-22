@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :expense_categories
   resources :splash
 
-  resources :categories, only: [:index, :show, :new, :create, :destroy] do
-    resources :expenses, only: [:index, :show, :new, :create, :destroy]
+  resources :categories, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :expense_categories, only: [:index]
   end
+
+  resources :expenses, only: [:new, :create, :destroy, :show]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

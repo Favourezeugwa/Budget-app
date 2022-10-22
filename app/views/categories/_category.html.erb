@@ -1,7 +1,7 @@
 <div id="<%= dom_id category %>">
   <p>
     <strong>Name:</strong>
-    <%= link_to category.name, category_expenses_path(category) %>
+    <%= link_to category.name, category_expense_categories_path(category.id) %>
   </p>
 
   <p>
@@ -11,6 +11,7 @@
 
   <p>
     <strong>Total transaction amount:</strong>
+    <%= category.total %>
   </p>
 
 </div>

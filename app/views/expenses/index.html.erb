@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green"></p>
 
 <h1>Expenses</h1>
 
@@ -6,9 +6,7 @@
   <% @expenses.each do |expense| %>
     <%= render expense %>
     <p>
-      <%= link_to "Show this expense", expense %>
+      <%= link_to "Show this expense", category_expense_path(expense.category_id, expense) %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New expense", new_expense_category_path %>

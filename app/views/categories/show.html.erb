@@ -6,3 +6,6 @@
   <%= link_to "Back to categories", categories_path %>
   <%= link_to 'See all Expenses', expense_categories_path %>
 </div>
+
+ <%= render partial: 'modal', locals: { recipe_id: @recipe }  %>
+      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "btn
