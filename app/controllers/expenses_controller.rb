@@ -25,7 +25,10 @@ class ExpensesController < ApplicationController
       if @expense.save
         @category = ExpenseCategory.create(expense_id: @expense.id, category_id: expense_category_params[:category_id])
         @category.increment_total
-        format.html { redirect_to category_expense_categories_path(@category.category_id), notice: 'Expense was successfully created.' }
+        format.html do
+          redirect_to category_expense_categories_path(@category.category_id),
+                      notice: 'Expense was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -48,7 +51,9 @@ class ExpensesController < ApplicationController
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to category_expense_categories_path(@expense), notice: 'Expense was successfully destroyed.' }
+      format.html do
+        redirect_to category_expense_categories_path(@expense), notice: 'Expense was successfully destroyed.'
+      end
     end
   end
 
