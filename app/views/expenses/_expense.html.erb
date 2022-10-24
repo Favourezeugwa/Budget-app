@@ -4,14 +4,14 @@
     <%= expense.name %>
   </p>
 
+  <div class="container-flud mx-3 px-2 bg-white border-bottom">
+    <p class="py-2">Transactionº<%= expense.created_at.to_time.to_i %> <br/>
+    <span class="fa fa-calendar"></span> <span class="mx-1"><%= expense.created_at %></span>
+    </p>
+  </div>
+
   <p>
     <strong>Amount:</strong>
     <%= expense.amount %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= expense.user_id %>
-  </p>
-
 </div>

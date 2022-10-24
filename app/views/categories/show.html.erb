@@ -3,8 +3,9 @@
 <%= render @category %>
 
 <div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
   <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= link_to 'See all Expenses', expense_categories_path %>
 </div>
+
+ <%= render partial: 'modal', locals: { recipe_id: @recipe }  %>
+      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "btn
