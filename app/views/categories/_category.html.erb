@@ -1,7 +1,9 @@
 <div id="<%= dom_id category %>">
   <p>
     <strong>Name:</strong>
-    <%= link_to category.name, category_expense_categories_path(category.id) %>
+    <% if can? :read, category %>
+      <%= link_to category.name, category_expense_categories_path(category.id) %>
+    <% end %>
   </p>
 
   <p>

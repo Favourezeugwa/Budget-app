@@ -4,9 +4,11 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <%= link_to "Edit", edit_category_path(category)  %>
-    <%= button_to "Destroy", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}%>
+    <% if can? :destroy, category %>
+      <%= render category %>
+      <%= link_to "Edit", edit_category_path(category)  %>
+      <%= button_to "Destroy", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}%>
+    <% end%>
   <% end %>
 </div>
 
