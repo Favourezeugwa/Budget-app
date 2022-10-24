@@ -16,7 +16,7 @@
 
     <p>
       <%= link_to "Show this expense category", expense_path(expense) %>
-      <div class="mx-2">|</div> <%= button_to "Delete this expense", expense_path(expense), method: :delete, class: 'border-0 text-primary' %>
+      <div class="mx-2">|</div> <%= button_to "Delete this expense", expense_path(expense), method: :delete, class: 'border-0 text-primary', data: { turbo_confirm: "Are you sure ?"} %>
     </p>
   <% end %>
 </div>
