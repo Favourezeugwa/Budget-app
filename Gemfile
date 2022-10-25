@@ -58,6 +58,7 @@ group :development, :test do
 
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'ffi'
 end
 
 group :development do
