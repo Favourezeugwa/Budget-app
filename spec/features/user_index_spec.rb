@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User index page', type: :feature do
   before :each do
-    user = User.create(
+    @user = User.create(
       name: 'Favour',
       email: 'john1@gmail.com',
       password: '1234567',
