@@ -2,32 +2,41 @@ require 'rails_helper'
 
 RSpec.describe 'Inventory index page', type: :feature do
   before :each do
-    @user1 = User.create(
-      name: 'Favour',
-      email: 'favour@gmail.com',
-      password: '1234567'
-    )
+      user = User.create(
+        name: 'John',
+        email: 'john1@gmail.com',
+        password: '1234567'
+      )
 
-    Category.create(
-      name: 'Category 1', 
-      icon: 'http://fasfa-utensils', 
-      description: 'Food expenses',  
-      user_id: @user1.id
-    )
+      category = user.categories.create(
+        name: 'Food',
+        icon: 'http://fasfa-utensils',
+        description: 'Food expenses',
+        user_id: user.id
+      )
 
-    Category.create(
-      name: 'Category 2', 
-      icon: 'http://category2',
-      description: 'Category 2 expenses', 
-      user_id: @user1.id
-    )
+    visit(new_user_session_path)
+    fill_in 'user[email]', with: user.email
+    fill_in 'user[password]', with: user.password
+    click_button 'Log in' 
   end
 
   describe 'GET /categories' do
     it 'displays all categories' do
       visit categories_path
-      expect(page).to have_content('Category 1')
-      expect(page).to have_content('Category 2')
+      expect(page).to have_content('Food')
+      expect(page).to have_content('http://fasfa-utensils')
+      expect(page).to have_content('Add New category')
+      expect(page).to have_content('Edit')
+      expect(page).to have_content('Destroy')
+    end
+
+    it 'displays new category' do
+      visit new_category_path
+      expect(page).to have_content('Name')
+      expect(page).to have_content('Icon')
+      expect(page).to have_content('New category')
+      expect(page).to have_content('Back to categories')
     end
   end
 end
