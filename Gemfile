@@ -57,8 +57,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'database_cleaner'
-  gem 'rspec-rails'
   gem 'ffi'
+  gem 'rspec-rails'
 end
 
 group :development do
