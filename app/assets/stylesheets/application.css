@@ -1,15 +1,46 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("http://fonts.cdnfonts.com/css/proxima-nova-2");
+
+* {
+  font-family: "Proxima Nova 2", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #3979c3;
+  --green: #60b524;
+  --gray: #434b54;
+  --white: #f1f3f2;
+  --lightgray: #f1f3f2;
+  --darkgray: #ddd;
+}
+
+.navbar {
+  background-color: var(--blue);
+}
+
+.dollar-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-splash {
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
