@@ -4,7 +4,6 @@
 
 > This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what
 
-
 ## Built With
 
 - Ruby on Rails [click here >>](https://guides.rubyonrails.org/)
@@ -13,33 +12,44 @@
 - Bootstrap
 - Ruby
 
+### Live demo
+
+[Live Demo Link](https://budget-app-fave.herokuapp.com/)
+
+[Loom video](https://www.loom.com/share/6121f54dee074f73a146067a8b00a6bc)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
 ```
   Ruby
   Ruby on Rails
   PostgreSQL
 ```
+
 ### Setup
+
 Clone the repository and change the directory to blog
 
-``` 
+```
   $ git clone git@github.com:Favourezeugwa/Budget-app.git
 
   $ cd Budget-app
 ```
 
 ### Install
+
 Install all project dependencies by running the command below
- 
-``` 
+
+```
   $ bundle install
 ```
 
 ### Run the application
+
 ```
   Linux
   $ bin/rails server
@@ -51,17 +61,20 @@ Install all project dependencies by running the command below
 ```
 
 ### Visit the homepage of application
+
 ```
   $ http://localhost:3000/
 ```
 
 ### Check linter errors
-``` 
+
+```
   $ rubocop .
 ```
 
 ### Run tests
-``` 
+
+```
   $ Rspec spec
 ```
 
