@@ -1,15 +1,21 @@
-<p style="color: green"></p>
+<p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1 class="title">Categories</h1>
 
-<div id="categories">
+<ul id="categories">
   <% @categories.each do |category| %>
     <% if can? :destroy, category %>
+    <li class="category-list">
       <%= render category %>
-      <%= link_to "Edit", edit_category_path(category)  %>
-      <%= button_to "Destroy", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}%>
+      <div class="path-links">
+        <%= link_to "Edit", edit_category_path(category)  %>
+        <%= button_to "Destroy", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}%>
+      </div>
+    </li>
     <% end%>
   <% end %>
-</div>
+</ul>
 
-<%= link_to "Add New category", new_category_path %>
+<div class="new-form">
+  <p class="new-form-text pt-2"><%= link_to "Add New category", new_category_path %></p>
+</div>

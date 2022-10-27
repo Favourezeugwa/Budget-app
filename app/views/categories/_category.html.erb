@@ -1,19 +1,15 @@
-<div id="<%= dom_id category %>">
+<div id="<%= dom_id category %>" class="render-category">
   <p>
-    <strong>Name:</strong>
+    <%= image_tag category.icon, alt: 'icon' %>
+  </p>
+
+  <p>
     <% if can? :read, category %>
       <%= link_to category.name, category_expense_categories_path(category.id) %>
     <% end %>
   </p>
 
   <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
+    <strong>$<%= category.total %></strong>
   </p>
-
-  <p>
-    <strong>Total transaction amount:</strong>
-    <%= category.total %>
-  </p>
-
 </div>

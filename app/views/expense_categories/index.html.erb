@@ -1,26 +1,48 @@
-<p style="color: green"></p>
-
-<h1>Expense categories</h1>
-
-<div id="expense_categories">
-  <% @expenses.each do |expense| %>
-    <p>
-      <strong>Name:</strong>
-      <%= expense.name %>
-    </p>
-
-    <p>
-      <strong>Amount:</strong>
-      <%= expense.amount %>
-    </p>
-
-    <p>
-      <%= link_to "Show this expense category", expense_path(expense) %>
-      <div class="mx-2">|</div> <%= button_to "Delete this expense", expense_path(expense), method: :delete, class: 'border-0 text-primary', data: { turbo_confirm: "Are you sure ?"} %>
-    </p>
-  <% end %>
+<p style="color: green"><%= notice %></p>
+<div class="category-info">
+  <h1>
+    <%= image_tag @category.icon %>
+    <%= @category.name %> Expenses
+  </h1>
+  <p><%= @category.description %> </p>
 </div>
 
-<%= link_to "New expense", new_expense_path %>
+<div id="expense_categories">
+  <table class="table table-striped table-bordered table-hover">
+    <% if @expenses.empty? %>
+      <p>There are no expenses yet.</p>
+    <% else %>
+      <thead class="table-secondary">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.name %></td>
+            <td><span>$<%= expense.amount %></span></td>
+            <td><%= link_to "Show", expense_path(expense) %>
+            <%= link_to "Delete", expense_path(expense), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% end %>
+  </table>
+</div>
 
-<%= link_to "Back to category", categories_path %>
+<div class="total">
+  <strong>Total Payment: $<%= @category.total %></strong>
+</div>
+
+<strong class="mx-4"><%= link_to "Back to category", categories_path %></strong>
+
+<div class="new-form">
+  <p class="new-form-text pt-2"><%= link_to "New expense", new_expense_path %></p>
+</div>
+
