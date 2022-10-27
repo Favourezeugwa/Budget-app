@@ -52,12 +52,12 @@ Install all project dependencies by running the command below
 
 ```
   Linux
-  $ bin/rails server
+  $ rails server
 ```
 
 ```
   Windows
-  $ ruby bin/rails server
+  $ rails server
 ```
 
 ### Visit the homepage of application
