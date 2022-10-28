@@ -14,7 +14,7 @@
 
 ### Live demo
 
-[Live Demo Link](https://budget-app-fave.herokuapp.com/)
+[Live Demo Link](https://fave-budget-app.herokuapp.com/)
 
 [Loom video](https://www.loom.com/share/6121f54dee074f73a146067a8b00a6bc)
 
@@ -97,7 +97,6 @@ Feel free to check the [issues page](https://github.com/Favourezeugwa/Budget-app
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
 
 - My Acknowledgements to Gregoire Vella on Behance the author of the original design, as required by the Creative Commons license of the design. [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) the [author of the original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=), as required by the [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/).
 
