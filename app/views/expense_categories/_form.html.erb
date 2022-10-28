@@ -1,0 +1,29 @@
+<%= form_with model: [@category, @category.expense_categories.create] do |form| %>
+  <% if expense_category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize expense_category.errors.count, "error" %> prohibited this expense_category from being saved:</h2>
+
+      <ul>
+        <% expense_category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <%= form.hidden_field :category_id, value: category_id.id  %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

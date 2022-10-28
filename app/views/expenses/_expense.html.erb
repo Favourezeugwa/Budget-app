@@ -1,0 +1,17 @@
+<div id="<%= dom_id expense %>">
+  <p class="container-flud mx-3 px-2 bg-white border-bottom">
+    <strong>Name:</strong>
+    <%= expense.name %>
+  </p>
+
+  <div class="container-flud mx-3 px-2 bg-white border-bottom">
+    <p class="py-2">Transactionº<%= expense.created_at.to_time.to_i %> <br/>
+    <span class="fa fa-calendar"></span> <span class="mx-1"><%= expense.created_at %></span>
+    </p>
+  </div>
+
+  <p class="container-flud mx-3 px-2 bg-white border-bottom">
+    <strong>Total Amount: $</strong>
+    <%= expense.amount %>
+  </p>
+</div>
