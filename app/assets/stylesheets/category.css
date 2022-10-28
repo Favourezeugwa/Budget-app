@@ -16,6 +16,7 @@
   min-width: 100%;
   padding: 10px;
   bottom: 0;
+  left: 0;
   position: fixed;
   text-align: center;
   font-size: 10px;
@@ -26,6 +27,7 @@
   border: 2px solid #fff;
   width: 70%;
   margin: 0 auto;
+  padding: 5px;
 }
 
 .new-form-text a {
@@ -73,20 +75,25 @@ p {
   margin: 0 20px;
 }
 
-.expense-list {
-  list-style: none;
-  display: flex;
+.expense-category {
+  margin-top: 30px;
 }
 
-#expense_categories {
-  margin: 20px 30px;
+.expense-list {
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 10px 20px;
 }
 
 .total {
   border: 1px solid #ddd;
-  margin: 20px 30px;
-  text-align: center;
+  margin: 10px 20px;
   font-size: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .show-expense {
