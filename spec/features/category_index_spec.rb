@@ -25,7 +25,6 @@ RSpec.describe 'Inventory index page', type: :feature do
     it 'displays all categories' do
       visit categories_path
       expect(page).to have_content('Food')
-      expect(page).to have_content('http://fasfa-utensils')
       expect(page).to have_content('Add New category')
       expect(page).to have_content('Edit')
       expect(page).to have_content('Destroy')
@@ -33,7 +32,6 @@ RSpec.describe 'Inventory index page', type: :feature do
 
     it 'displays new category' do
       visit new_category_path
-      expect(page).to have_content('Name')
       expect(page).to have_content('Icon')
       expect(page).to have_content('New category')
       expect(page).to have_content('Back to categories')
